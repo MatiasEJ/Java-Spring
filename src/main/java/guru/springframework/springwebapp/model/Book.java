@@ -14,31 +14,20 @@ public class Book {
     private Long id;
     private String title;
     private String isbn;
+
     @OneToOne
-    private Set<Publisher> publishers = new HashSet<>();
+    private Publisher publishers;
+
     @ManyToMany
-    @JoinTable(name="author_book", joinColumns = @JoinColumn(name = "book_id" ),inverseJoinColumns =  @JoinColumn(name = "author_id"))
+    @JoinTable(name="author_book",
+            joinColumns = @JoinColumn(name = "book_id" ),
+            inverseJoinColumns =  @JoinColumn(name = "author_id"))
     private Set<Author> authors = new HashSet<>();
 
-    public Book() {
-    }
-
-    public Book(String title, String isbn) {
-        this.title = title;
-        this.isbn = isbn;
-    }
-
-    public Book(String title, String isbn, Set<Publisher> publishers) {
+    public Book(String title, String isbn, Publisher publishers) {
         this.title = title;
         this.isbn = isbn;
         this.publishers = publishers;
-    }
-
-    public Book(String title, String isbn, Set<Publisher> publishers, Set<Author> authors) {
-        this.title = title;
-        this.isbn = isbn;
-        this.publishers = publishers;
-        this.authors = authors;
     }
 
     public Long getId() {
@@ -65,11 +54,11 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public Set<Publisher> getPublishers() {
+    public Publisher getPublishers() {
         return publishers;
     }
 
-    public void setPublishers(Set<Publisher> publishers) {
+    public void setPublishers(Publisher publishers) {
         this.publishers = publishers;
     }
 
@@ -81,21 +70,35 @@ public class Book {
         this.authors = authors;
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return Objects.equals(id, book.id);
+        return Objects.equals(id, book.id) &&
+                Objects.equals(title, book.title) &&
+                Objects.equals(isbn, book.isbn) &&
+                Objects.equals(publishers, book.publishers) &&
+                Objects.equals(authors, book.authors);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(id, title, isbn, publishers, authors);
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", publishers=" + publishers +
+                ", authors=" + authors +
+                '}';
+    }
+
+
+
 }
