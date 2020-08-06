@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.springframework.boot:spring-boot-starter-validation:2.2.10.BUILD-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-validation/2.2.10.BUILD-SNAPSHOT/spring-boot-starter-validation-2.2.10.BUILD-20200805.180218-38.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-validation/2.2.10.BUILD-SNAPSHOT/spring-boot-starter-validation-2.2.10.BUILD-20200806.152036-42.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-validation/2.2.10.BUILD-SNAPSHOT/spring-boot-starter-validation-2.2.10.BUILD-20200805.180218-38-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-validation/2.2.10.BUILD-SNAPSHOT/spring-boot-starter-validation-2.2.10.BUILD-20200806.152036-42-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-validation/2.2.10.BUILD-SNAPSHOT/spring-boot-starter-validation-2.2.10.BUILD-20200805.180218-38-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-validation/2.2.10.BUILD-SNAPSHOT/spring-boot-starter-validation-2.2.10.BUILD-20200806.152036-42-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

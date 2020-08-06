@@ -14,25 +14,31 @@ public class Book {
     private Long id;
     private String title;
     private String isbn;
-    private String publisher;
+    @OneToOne
+    private Set<Publisher> publishers = new HashSet<>();
     @ManyToMany
     @JoinTable(name="author_book", joinColumns = @JoinColumn(name = "book_id" ),inverseJoinColumns =  @JoinColumn(name = "author_id"))
-    private Set<Autor> authors = new HashSet<>();
+    private Set<Author> authors = new HashSet<>();
 
     public Book() {
     }
 
-    public Book(String title, String isbn, String publisher, Set<Autor> authors) {
+    public Book(String title, String isbn) {
         this.title = title;
         this.isbn = isbn;
-        this.publisher = publisher;
-        this.authors = authors;
     }
 
-    public Book(String title, String isbn, String publisher) {
+    public Book(String title, String isbn, Set<Publisher> publishers) {
         this.title = title;
         this.isbn = isbn;
-        this.publisher = publisher;
+        this.publishers = publishers;
+    }
+
+    public Book(String title, String isbn, Set<Publisher> publishers, Set<Author> authors) {
+        this.title = title;
+        this.isbn = isbn;
+        this.publishers = publishers;
+        this.authors = authors;
     }
 
     public Long getId() {
@@ -59,31 +65,25 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public String getPublisher() {
-        return publisher;
+    public Set<Publisher> getPublishers() {
+        return publishers;
     }
 
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
+    public void setPublishers(Set<Publisher> publishers) {
+        this.publishers = publishers;
     }
 
-    public Set<Autor> getAuthors() {
+    public Set<Author> getAuthors() {
         return authors;
     }
 
-    public void setAuthors(Set<Autor> authors) {
+    public void setAuthors(Set<Author> authors) {
         this.authors = authors;
     }
 
     @Override
     public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", isbn='" + isbn + '\'' +
-                ", publisher='" + publisher + '\'' +
-                ", authors=" + authors +
-                '}';
+        return super.toString();
     }
 
     @Override

@@ -7,7 +7,7 @@ import java.util.Set;
 
 
 @Entity
-public class Autor {
+public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -16,15 +16,15 @@ public class Autor {
     @ManyToMany(mappedBy = "authors")
     private Set<Book> books = new HashSet<>();
 
-    public Autor() {
+    public Author() {
     }
 
-    public Autor(String firstName, String lastName) {
+    public Author(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public Autor(String firstName, String lastName, Set<Book> books) {
+    public Author(String firstName, String lastName, Set<Book> books) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.books = books;
@@ -66,7 +66,7 @@ public class Autor {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Autor autor = (Autor) o;
+        Author autor = (Author) o;
         return Objects.equals(id, autor.id);
     }
 
