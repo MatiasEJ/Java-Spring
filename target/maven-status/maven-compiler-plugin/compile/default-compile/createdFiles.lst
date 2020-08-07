@@ -1,4 +1,5 @@
 guru\springframework\springwebapp\SpringwebappApplication.class
 guru\springframework\springwebapp\model\repositories\PublisherRepository.class
+guru\springframework\springwebapp\controllers\BookController.class
 guru\springframework\springwebapp\model\Publisher.class
 guru\springframework\springwebapp\model\Book.class
